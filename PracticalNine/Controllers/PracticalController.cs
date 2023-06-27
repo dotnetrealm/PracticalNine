@@ -13,5 +13,10 @@ namespace PracticalNine.Controllers
         {
             return View();
         }
+        public IActionResult Test3()
+        {
+            ViewData["Message"] = "Hello World";
+            return View();
+        }
     }
 }
