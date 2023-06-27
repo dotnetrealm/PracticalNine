@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Test-02";
+    ViewBag.TaskInfo = "Test-02";
+}
+<div class="d-flex justify-content-center">
+    <button class="btn btn-primary mx-2" id="PrintLableBtn">PRINT TEXT</button>
+    <button class="btn btn-primary mx-2" id="BoldLableBtn">BOLD</button>
+    <button class="btn btn-primary mx-2" id="ItalicLableBtn">ITALIC</button>
+    <button class="btn btn-primary mx-2" id="UnderlineLableBtn">UNDERLINE</button>
+    <button class="btn btn-outline-secondary mx-2" id="LableResetBtn">RESET</button>
+</div>
+<label id="TestLable" class="mt-4"></label>
+
+@section Scripts{
+    <script>
+        var lableElement = document.getElementById("TestLable");
+
+        var btns = document.getElementsByTagName("button");
+        Array.from(btns).forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                switch (e.target.id) {
+                    case "PrintLableBtn":
+                        lableElement.removeAttribute("style");
+                        lableElement.textContent = "Hello World!";
+                        break;
+                    case "BoldLableBtn":
+                        lableElement.style.fontWeight = "bold";
+                        break;
+                    case "ItalicLableBtn":
+                        lableElement.style.fontStyle = "italic";
+                        break;
+                    case "UnderlineLableBtn":
+                        lableElement.style.textDecoration = "underline";
+                        break;
+                    case "LableResetBtn":
+                        lableElement.removeAttribute("style");
+                        break;
+                }
+            })
+        })
+    </script>
+}

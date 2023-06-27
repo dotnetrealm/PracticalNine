@@ -9,5 +9,9 @@ namespace PracticalNine.Controllers
             ViewBag.Message = "Hello World";
             return View();
         }
+        public IActionResult Test2()
+        {
+            return View();
+        }
     }
 }
